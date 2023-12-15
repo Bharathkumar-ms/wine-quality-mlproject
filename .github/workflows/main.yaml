@@ -24,6 +24,13 @@ jobs:
 
       - name: Run unit tests
         run: echo "Running unit tests"
+        
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        run: |
+          # Your ML workflow goes here
+          pip install -r requirements.txt
+          python main.py
 
   build-and-push-ecr-image:
     name: Continuous Delivery
